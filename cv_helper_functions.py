@@ -5,7 +5,7 @@ import numpy as np
 #############################################
 
 
-### Display Images ###
+#### Display Images ####
 
 def imshow(image = None, title = "", size = 10, bgr_2_rgb = True, grayscale = False):
     """
@@ -16,9 +16,9 @@ def imshow(image = None, title = "", size = 10, bgr_2_rgb = True, grayscale = Fa
     grayscale: Convert image to gray scale
     """
     if grayscale == True:
-        img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    if bgr_2_rgb == True:
         img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    if bgr_2_rgb == True:
+        img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
     h, w, c = np.array(image).shape
     aspect_ratio = h/w
@@ -27,4 +27,9 @@ def imshow(image = None, title = "", size = 10, bgr_2_rgb = True, grayscale = Fa
     plt.title(title)
     plt.show()
 
+
+## Test ##
+# img = cv2.imread("D:\\Projects\\Traffic-Analysis\\frame_differencing_Analytics_Vidya\\video_frames\\0.png")
+# print(img)
+# imshow(img, "traffic")
 
